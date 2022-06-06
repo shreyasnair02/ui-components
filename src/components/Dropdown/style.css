@@ -1,0 +1,127 @@
+:root {
+	--bg-light: #f5f7fb;
+	--text-light: #2c3e50;
+
+	--bgc-light: #fff;
+	--bgc: var(--bgc-light);
+
+	/* by default light theme */
+	--bg: var(--bg-light);
+	--text: var(--text-light);
+}
+
+body {
+	min-height: 100vh;
+	display: grid;
+	place-items: center;
+	background-color: var(--bg);
+	color: var(--text);
+	font-family: system-ui, sans-serif;
+}
+
+svg {
+	pointer-events: none;
+}
+
+.component {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.dropdown {
+	width: 18rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-radius: 6px;
+	background-color: var(--bgc);
+}
+
+.dropdown:focus {
+	box-shadow: 0 0 4px 4px hsla(213, 100%, 63%, 0.25);
+	outline: 2px solid hsl(212, 100%, 63%);
+}
+
+.dropdown__list {
+	background-color: var(--bgc);
+	display: flex;
+	flex-direction: column;
+	border: 1px solid #dbe2f0;
+	border-radius: 6px;
+	box-shadow: 0px 10px 32px -4px hsla(222, 52%, 19%, 0.1),
+		0px 6px 14px -6px hsla(222, 52%, 19%, 0.12);
+	visibility: hidden;
+	pointer-events: none;
+	transform: scale(0.98)  translate(0, -20px);
+	opacity: 0;
+	transition: transform 0.2s ease-in, opacity 0.2s ease-in, visibility 0s ease-in 0.25s;
+}
+
+
+.opened ~ .dropdown__list {
+	transform: scale(1) translate(0, 0);
+	opacity: 1;
+	pointer-events: auto;
+	transition: all 0.1s ease-in;
+	transition-property: opacity, transform;
+	visibility: visible;
+}
+
+@keyframes slide {
+	from {
+		opacity: 0;
+		transform: translateY(-30px);
+		visibility: hidden;
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+		visibility: visible;
+	}
+}
+
+.dropdown__item {
+	min-height: 2.5rem;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-right: 1.2em;
+}
+
+.dropdown__item:focus-visible {
+	outline: 2px solid hsl(212, 100%, 63%);
+	outline-offset: -2px;
+}
+
+.dropdown__item:first-child {
+	border-radius: 6px 6px 0 0;
+}
+
+.dropdown__item:last-child {
+	border-radius: 0 0 6px 6px;
+}
+
+.selected {
+	background-color: #f2f2f2;
+}
+
+.selected::after {
+	content: '';
+	display: flex;
+	margin-left: auto;
+	height: 24px;
+	width: 24px;
+	background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m5 12 5 5L20 7' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.chevron-down {
+	transition: transform 0.2s ease-in-out;
+	transform-origin: center;
+}
+
+.opened .chevron-down{
+	transform: rotate(180deg);
+}

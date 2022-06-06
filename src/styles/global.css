@@ -1,0 +1,25 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+button {
+	--bg: transparent;
+	--color: black;
+	--size: 1rem;
+	/* all: unset; */
+	background-color: var(--bg);
+	color: var(--color);
+	border: var(--border);
+	cursor: pointer;
+	font-size: var(--size);
+	padding: 0.5em 1em;
+	text-align: left;
+	color: inherit;
+	font-size: inherit;
+}
+
+button:is(:focus-visible) {
+	outline: 2px solid black;
+}
