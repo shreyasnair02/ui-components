@@ -2,13 +2,33 @@
 	--bg-light: #f5f7fb;
 	--text-light: #2c3e50;
 
+	--bg-dark: #222;
+	--text-dark: #f5f7fb;
+
+	--border-light: #dbe2f0;
+	--border-dark: #444;
+
 	--bgc-light: #fff;
-	--bgc: var(--bgc-light);
+	--bgc-100-light: #f2f2f2;
+	--bgc-dark: #353535;
+	--bgc-100-dark: #252525;
+
+	--bg-shadow-light: 0 0 4px 4px hsla(213, 100%, 63%, 0.25);
+	--bg-shadow-dark: 0 0 4px 4px hsl(0, 0, 5);
+
+	--dropdown-shadow-light: 0px 10px 32px -4px hsla(222, 52%, 19%, 0.1), 0px 6px 14px -6px hsla(222, 52%, 19%, 0.12) ;
+	--dropdown-shadow-dark: none; 
 
 	/* by default light theme */
 	--bg: var(--bg-light);
+	--bgc: var(--bgc-light);
 	--text: var(--text-light);
+	--border: var(--border-light);
+	--bgc-100: var(--bgc-100-light);
+	--bg-shadow: var(--bg-shadow-light);
+	--dropdown-shadow: var(--dropdown-shadow-light);
 }
+
 
 body {
 	min-height: 100vh;
@@ -17,6 +37,8 @@ body {
 	background-color: var(--bg);
 	color: var(--text);
 	font-family: system-ui, sans-serif;
+	transition: all 0.2s ease-in-out;
+	transition-property: color, background-color;
 }
 
 svg {
@@ -39,7 +61,7 @@ svg {
 }
 
 .dropdown:focus {
-	box-shadow: 0 0 4px 4px hsla(213, 100%, 63%, 0.25);
+	box-shadow: 0 0 4px 4px hsla(212, 50%, 60%, 0.2);
 	outline: 2px solid hsl(212, 100%, 63%);
 }
 
@@ -47,10 +69,9 @@ svg {
 	background-color: var(--bgc);
 	display: flex;
 	flex-direction: column;
-	border: 1px solid #dbe2f0;
+	border: 1px solid var(--border);
 	border-radius: 6px;
-	box-shadow: 0px 10px 32px -4px hsla(222, 52%, 19%, 0.1),
-		0px 6px 14px -6px hsla(222, 52%, 19%, 0.12);
+	box-shadow: var(--dropdown-shadow);
 	visibility: hidden;
 	pointer-events: none;
 	transform: scale(0.98)  translate(0, -20px);
@@ -66,20 +87,6 @@ svg {
 	transition: all 0.1s ease-in;
 	transition-property: opacity, transform;
 	visibility: visible;
-}
-
-@keyframes slide {
-	from {
-		opacity: 0;
-		transform: translateY(-30px);
-		visibility: hidden;
-	}
-
-	to {
-		opacity: 1;
-		transform: translateY(0);
-		visibility: visible;
-	}
 }
 
 .dropdown__item {
@@ -105,13 +112,14 @@ svg {
 }
 
 .selected {
-	background-color: #f2f2f2;
+	background-color: var(--bgc-100);
 }
 
 .selected::after {
 	content: '';
 	display: flex;
 	margin-left: auto;
+	color: inherit;
 	height: 24px;
 	width: 24px;
 	background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m5 12 5 5L20 7' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
@@ -124,4 +132,20 @@ svg {
 
 .opened .chevron-down{
 	transform: rotate(180deg);
+}
+
+@media(prefers-color-scheme: dark) {
+	:root {
+		--bg: var(--bg-dark);
+		--text: var(--text-dark);
+		--bgc: var(--bgc-dark);
+		--border: var(--border-dark);
+		--bgc-100: var(--bgc-100-dark);
+		--bg-shadow: var(--bg-shadow-dark);
+		--dropdown-shadow: var(--dropdown-shadow-dark);
+	}
+
+	.selected::after {
+		background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m5 12 5 5L20 7' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+	}
 }
