@@ -4,11 +4,17 @@
 	box-sizing: border-box;
 }
 
+html,
+body {
+	min-height: 100vh;
+	font-family: 'Lato', sans-serif;
+}
+
 button {
 	--bg: transparent;
 	--color: black;
 	--size: 1rem;
-	/* all: unset; */
+	appearance: none;
 	background-color: var(--bg);
 	color: var(--color);
 	border: var(--border);
@@ -17,9 +23,41 @@ button {
 	padding: 0.5em 1em;
 	text-align: left;
 	color: inherit;
-	font-size: inherit;
+	font-family: inherit;
 }
 
 button:is(:focus-visible) {
-	outline: 2px solid black;
+	outline: 2px solid currentColor;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Poppins', serif;
+}
+
+input {
+	font-family: inherit;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+svg,
+.icon {
+	line-height: 0;
+}
+
+svg {
+	pointer-events: none;
+}
+
+.align-center {
+	display: flex;
+	align-items: center;
 }
