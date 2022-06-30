@@ -24,6 +24,7 @@
 	--bg-100: var(--bg-100-light);
 	--bg-200: var(--bg-200-light);
 	--red: var(--red-light);
+	--outline-anim: outline-offset 100ms cubic-bezier(0.25, 0, 0.4, 1);
 }
 
 body {
@@ -58,6 +59,13 @@ body {
 	padding: var(--gap) 0.7rem;
 	margin: var(--margin-top) 0 0.5rem 0;
 	position: relative;
+	transition: var(--outline-anim), box-shadow 100ms ease-in-out;
+	outline-offset: 4px;
+}
+
+.component__tag-input:is(:hover, :focus-within) {
+	/* box-shadow: 0 0 1px 0 rgba(189, 192, 207, 0.06),
+		0 10px 16px -1px rgba(189, 192, 207, 0.2); */
 }
 
 .component__tag-input:focus-within {
@@ -91,7 +99,12 @@ body {
 .icon-delete {
 	padding: 0;
 	border-radius: 500px;
+	transition: var(--outline-anim);
+}
+
+.icon-delete:focus-visible {
 	outline-offset: 1px;
+	outline: 1px solid currentColor;
 }
 
 .component__info {
@@ -111,4 +124,7 @@ body {
 		--bg-200: var(--bg-200-dark);
 		--red: var(--red-dark);
 	}
+.component__tag-input:is(:hover, :focus-within) {
+	box-shadow: none;
+}
 }
