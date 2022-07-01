@@ -128,3 +128,7 @@ body {
 	box-shadow: none;
 }
 }
+
+.symbols {
+	display: none;
+}
