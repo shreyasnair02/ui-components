@@ -5,7 +5,7 @@ let tagInput = document.querySelector('.component__tag-input');
 const addTag = (text) => {
 	if (!text) return;
 	let tag = document.createElement('div');
-	tag.className = 'tag';
+	tag.classList.add('tag');
 	tag.innerHTML = `
 	 ${text}
 		<button class="icon icon-delete">
@@ -23,13 +23,21 @@ form.addEventListener('submit', (e) => {
 	addTag(input.value);
 });
 
-input.addEventListener('keyup', (e) => {
-	if (e.code === 'Comma') addTag(input.value.slice(0, -1));
-	else if (e.code === 'Backspace')
+input.addEventListener('keydown', (e) => {
+	if (e.code === 'Comma') addTag(input.value);
+	else if (e.code === 'Backspace' && input.value.length === 0)
 		e.target.parentNode?.previousElementSibling?.remove();
 });
 
 tagInput.addEventListener('click', (e) => {
 	if (!e.target.classList.contains('icon-delete')) return;
-	e.target.parentNode.remove();
+	let animation = e.target.parentNode.animate(
+		[{ transform: 'scale(1.0)' }, { transform: 'scale(0.5)' }],
+		{
+			fill: 'forwards',
+			duration: 50,
+			easing: 'ease-in',
+		}
+	);
+	animation.finished.then(() => e.target.parentNode.remove());
 });
