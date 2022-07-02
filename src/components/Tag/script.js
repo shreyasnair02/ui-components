@@ -24,7 +24,10 @@ form.addEventListener('submit', (e) => {
 });
 
 input.addEventListener('keydown', (e) => {
-	if (e.code === 'Comma') addTag(input.value);
+	if (e.code === 'Comma') {
+		e.preventDefault();
+		addTag(input.value);
+	} 
 	else if (e.code === 'Backspace' && input.value.length === 0)
 		e.target.parentNode?.previousElementSibling?.remove();
 });
