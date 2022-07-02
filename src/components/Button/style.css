@@ -271,7 +271,7 @@ input):where(:active):focus-visible {
         --box-shadow-active-light-two: var(--box-shadow-active-dark-one);
         /* --focus-outline-color: hsla(0, 0%, 89%, 0.915); */
         --focus-outline-color: #8ab4f8;
-        /* --focus-outline-color: #63ade5; */
+       
         --tertiary-disabled-border-light: #ffffff4c;
         --tertiary-disabled-text-light: #adb5bd;
         --download-default-green:var(--download-default-green-dark);
