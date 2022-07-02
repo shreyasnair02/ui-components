@@ -129,7 +129,7 @@ button {
 
 .primary {
     background-image: var(--primary-gradient);
-    /* border: 1px solid var(--primary); */
+   
 }
 
 .secondary {
