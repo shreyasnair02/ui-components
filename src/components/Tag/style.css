@@ -160,7 +160,7 @@ kbd {
 	}
 }
 
-@media (max-width: 768px) {
+@media (hover: none) {
 	.toggle {
 		display: none;
 	}
