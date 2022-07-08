@@ -98,6 +98,13 @@ body {
 	isolation: isolate;
 }
 
+kbd {
+	background-color: var(--bg-200);
+	padding: 4px;
+	margin: 0 2px;
+	border-radius: 4px;
+}
+
 .tag:before {
 	content: "";
 	display: block;
