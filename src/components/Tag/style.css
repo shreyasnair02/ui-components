@@ -153,6 +153,12 @@ body {
 	}
 }
 
+@media (max-width: 768px) {
+	.toggle {
+		display: none;
+	}
+}
+
 .symbols {
 	display: none;
 }
