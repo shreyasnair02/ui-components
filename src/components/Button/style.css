@@ -2,7 +2,6 @@
     Global
    ========= */
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -34,8 +33,9 @@
   --focus-outline-color: rgba(79, 75, 75, 0.749);
   --component-bg-light: #eaedf0;
   /*darkmode-colors*/
-  --bg-dark: #222222;
-  --component-bg-dark: #353535;
+  --bg-dark: #22262a;
+  /* --component-bg-dark: #353535; */
+  --component-bg-dark: #353b41;
   --box-shadow-hover-dark-one: #171a1c3d;
   --box-shadow-active-dark-one: #171a1c67;
   --secondary-text-dark: white;
@@ -296,5 +296,22 @@ input[type="file"]::file-selector-button {
   }
   svg {
     stroke: white;
+  }
+}
+@media screen and (max-width: 600px) {
+  /*:is(.secondary, .secondary-icon, .tertiary, .primary):hover {
+  }*/
+  :is(.secondary, .secondary-icon, .tertiary, .primary) {
+    /* transform: translateY(0.1em); */
+    transition: all 0.1s ease;
+  }
+  @media (hover: none) {
+    .button:hover {
+      box-shadow: inherit;
+    }
+  }
+  :is(.secondary, .secondary-icon, .tertiary, .primary):active {
+    transform: translateY(0.1em);
+    transition: all 0.1s ease;
   }
 }
