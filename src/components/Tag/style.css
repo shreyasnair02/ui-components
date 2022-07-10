@@ -106,7 +106,7 @@ kbd {
 }
 
 .tag:before {
-	content: "";
+	content: '';
 	display: block;
 	position: absolute;
 	border-radius: 4px;
@@ -119,7 +119,8 @@ kbd {
 @keyframes animate-in {
 	from {
 		transform: scale(0.3);
-	} to {
+	}
+	to {
 		transform: scale(1);
 	}
 }
@@ -136,13 +137,11 @@ kbd {
 }
 
 .component__info {
-	align-items: start;
-	line-height: 1;
+	align-items: center;
 	gap: 0.25rem;
 }
 
 .component__info > svg {
-	margin-top: 1px;
 	flex-shrink: 0;
 }
 
@@ -160,9 +159,27 @@ kbd {
 	}
 }
 
-@media (hover: none) {
+@media (max-width: 640px) {
 	.toggle {
 		display: none;
+	}
+}
+
+@supports (hover: none) {
+	@media (hover: none) {
+		.toggle {
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 430px) {
+	.component__info {
+		align-items: start;
+	}
+
+	.component__info svg {
+		margin-top: 3px;
 	}
 }
 
