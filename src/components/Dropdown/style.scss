@@ -1,3 +1,5 @@
+@use '../../styles/global' as *;
+
 :root {
 	--bg-light: #f5f7fb;
 	--text-light: #2c3e50;
@@ -16,8 +18,9 @@
 	--bg-shadow-light: 0 0 4px 4px hsla(213, 100%, 63%, 0.25);
 	--bg-shadow-dark: 0 0 4px 4px hsl(0, 0, 5);
 
-	--dropdown-shadow-light: 0px 10px 32px -4px hsla(222, 52%, 19%, 0.1), 0px 6px 14px -6px hsla(222, 52%, 19%, 0.12) ;
-	--dropdown-shadow-dark: none; 
+	--dropdown-shadow-light: 0px 10px 32px -4px hsla(222, 52%, 19%, 0.1),
+		0px 6px 14px -6px hsla(222, 52%, 19%, 0.12);
+	--dropdown-shadow-dark: none;
 
 	/* by default light theme */
 	--bg: var(--bg-light);
@@ -28,7 +31,6 @@
 	--bg-shadow: var(--bg-shadow-light);
 	--dropdown-shadow: var(--dropdown-shadow-light);
 }
-
 
 body {
 	min-height: 100vh;
@@ -58,57 +60,57 @@ svg {
 	justify-content: space-between;
 	border-radius: 6px;
 	background-color: var(--bgc);
-}
 
-.dropdown:focus {
-	box-shadow: 0 0 4px 4px hsla(212, 50%, 60%, 0.2);
-	outline: 2px solid hsl(212, 100%, 63%);
-}
+	&:focus {
+		box-shadow: 0 0 4px 4px hsla(212, 50%, 60%, 0.2);
+		outline: 2px solid hsl(212, 100%, 63%);
+	}
 
-.dropdown__list {
-	background-color: var(--bgc);
-	display: flex;
-	flex-direction: column;
-	border: 1px solid var(--border);
-	border-radius: 6px;
-	box-shadow: var(--dropdown-shadow);
-	visibility: hidden;
-	pointer-events: none;
-	transform: scale(0.98)  translate(0, -20px);
-	opacity: 0;
-	transition: transform 0.2s ease-in, opacity 0.2s ease-in, visibility 0s ease-in 0.25s;
-}
+	&__list {
+		background-color: var(--bgc);
+		display: flex;
+		flex-direction: column;
+		border: 1px solid var(--border);
+		border-radius: 6px;
+		box-shadow: var(--dropdown-shadow);
+		visibility: hidden;
+		pointer-events: none;
+		transform: scale(0.98) translate(0, -20px);
+		opacity: 0;
+		transition: transform 0.2s ease-in, opacity 0.2s ease-in,
+			visibility 0s ease-in 0.25s;
+	}
 
+	.opened ~ &__list {
+		transform: scale(1) translate(0, 0);
+		opacity: 1;
+		pointer-events: auto;
+		transition: all 0.1s ease-in;
+		transition-property: opacity, transform;
+		visibility: visible;
+	}
 
-.opened ~ .dropdown__list {
-	transform: scale(1) translate(0, 0);
-	opacity: 1;
-	pointer-events: auto;
-	transition: all 0.1s ease-in;
-	transition-property: opacity, transform;
-	visibility: visible;
-}
+	&__item {
+		min-height: 2.5rem;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-right: 1.2em;
 
-.dropdown__item {
-	min-height: 2.5rem;
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding-right: 1.2em;
-}
+		&:focus-visible {
+			outline: 2px solid hsl(212, 100%, 63%);
+			outline-offset: -2px;
+		}
 
-.dropdown__item:focus-visible {
-	outline: 2px solid hsl(212, 100%, 63%);
-	outline-offset: -2px;
-}
+		&:first-child {
+			border-radius: 6px 6px 0 0;
+		}
 
-.dropdown__item:first-child {
-	border-radius: 6px 6px 0 0;
-}
-
-.dropdown__item:last-child {
-	border-radius: 0 0 6px 6px;
+		&:last-child {
+			border-radius: 0 0 6px 6px;
+		}
+	}
 }
 
 .selected {
@@ -130,11 +132,11 @@ svg {
 	transform-origin: center;
 }
 
-.opened .chevron-down{
+.opened .chevron-down {
 	transform: rotate(180deg);
 }
 
-@media(prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
 	:root {
 		--bg: var(--bg-dark);
 		--text: var(--text-dark);
