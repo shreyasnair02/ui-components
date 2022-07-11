@@ -159,17 +159,9 @@ kbd {
 	}
 }
 
-@media (max-width: 640px) {
+@media only screen and (hover: none), only screen and (pointer: coarse) {
 	.toggle {
 		display: none;
-	}
-}
-
-@supports (hover: none) {
-	@media (hover: none) {
-		.toggle {
-			display: none;
-		}
 	}
 }
 
