@@ -1,7 +1,6 @@
 /* =========
     Global
    ========= */
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -58,11 +57,9 @@
   --download-hover-green: var(--download-hover-green-light);
   --download-active-green: var(--download-active-green-light);
 }
-
 /* =========
-      layout
-      ========= */
-
+    layout
+   ========= */
 body {
   background-color: var(--background);
   display: flex;
@@ -71,13 +68,12 @@ body {
   height: 100vh;
   flex-wrap: wrap;
 }
-
 .component {
   display: flex;
   background-color: var(--component-bg);
   flex-wrap: wrap;
   flex-direction: column;
-  width: fit-content;
+  width: 75%;
   height: auto;
   border-radius: 6px;
   align-items: center;
@@ -87,9 +83,11 @@ body {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-  width: fit-content;
+  width: 100%;
   justify-content: center;
   align-items: center;
+  gap: 5ch;
+  padding: 1.8rem;
 }
 
 .component-row2 {
@@ -97,8 +95,10 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  gap: 5ch;
+  padding: 1.8rem;
+  width: 100%;
 }
-
 button {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -108,30 +108,22 @@ button {
   user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
-
-.widget {
-  margin: 1.5rem;
-  display: inline-flex;
-}
-
 .button {
   display: inline-flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
   color: var(--secondary-text-dark);
-  padding: 0.7rem 1.8rem;
+  padding: 0.55rem 1.3rem;
   cursor: pointer;
-  border-radius: 7px;
+  border-radius: 6px;
   box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
   transition: 0.1s all ease;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
-
 .primary {
   background-image: var(--primary-gradient);
 }
-
 .secondary {
   color: var(--primary);
   background-color: var(--secondary-bg);
@@ -143,24 +135,20 @@ button {
   background-color: var(--secondary-bg);
   border: 2.4px solid hsla(230, 100%, 58%, 0.507);
 }
-
 .secondary-icon span {
   padding-left: 5px;
 }
-
 .secondary-icon svg {
   position: relative;
   top: 1px;
   right: 3px;
   pointer-events: none;
 }
-
 .tertiary {
   color: var(--tertiary-text-light);
   background-color: var(--tertiary-bg);
   border: 2.4px solid var(--tertiary-border-light);
 }
-
 .tertiary-disabled {
   color: var(--tertiary-disabled-text-light);
   background-color: var(--bg-light);
@@ -179,24 +167,25 @@ button {
 .upload-file {
   color: black;
   background-color: #d9dee3;
-  height: 2.5rem;
-  padding: 0.1rem 1.8rem;
+  height: 2.3rem;
+  padding: 0rem 1.8rem;
   position: relative;
-  /* top: 5px; */
+
   font-size: medium;
   display: inline-flex;
-
-  flex-shrink: 3;
+  /* flex-shrink: 3; */
+  border-radius: 6px;
   -webkit-tap-highlight-color: transparent;
+  inline-size: 100%;
+  user-select: none;
 }
 
 input[type="file"]::file-selector-button {
-  padding: 6px;
+  /* padding: 6px; */
   color: #22262ad5;
   position: relative;
-  right: 27px;
+  right: 29px;
   cursor: pointer;
-  width: 40%;
   font-size: medium;
   font-weight: 650;
   background-color: #ffffff;
@@ -204,18 +193,19 @@ input[type="file"]::file-selector-button {
   height: 100%;
   border-radius: 4px;
   appearance: none;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 40%;
+  box-shadow: 0px 0px 1px 0.2px #00000021;
 }
 
 .primary:hover {
-  box-shadow: 0px 0px 1px 6px var(--box-shadow-hover-one);
+  box-shadow: 0px 0px 1px 7px var(--box-shadow-hover-one);
 }
 
 :is(.secondary, .secondary-icon):hover {
-  box-shadow: 0px 0px 1px 6px var(--box-shadow-hover-one);
+  box-shadow: 0px 0px 1px 7px var(--box-shadow-hover-one);
 }
 
 :is(.primary, .secondary, .secondary-icon):active {
@@ -223,7 +213,7 @@ input[type="file"]::file-selector-button {
 }
 
 :is(.tertiary):hover {
-  box-shadow: 0px 0px 1px 6px var(--box-shadow-hover-light-two);
+  box-shadow: 0px 0px 1px 7px var(--box-shadow-hover-light-two);
 }
 
 :is(.tertiary):active {
@@ -273,6 +263,7 @@ input[type="file"]::file-selector-button {
     --download-hover-green: var(--download-hover-green-dark);
     --download-active-green: var(--download-active-green-dark);
   }
+
   .secondary,
   .secondary-icon {
     border: none;
@@ -287,6 +278,8 @@ input[type="file"]::file-selector-button {
   .tertiary-disabled {
     background-color: #353b4100;
     border: 2px solid var(--tertiary-disabled-border-light);
+    opacity: 0.8;
+    box-shadow: none;
   }
   .upload-file {
     box-shadow: 0px 0px 1px 2px #00000010;
@@ -300,10 +293,11 @@ input[type="file"]::file-selector-button {
   svg {
     stroke: white;
   }
+  .upload-file {
+    box-shadow: 0px 1px 5px 2px #00000021;
+  }
 }
 @media screen and (max-width: 600px) {
-  /*:is(.secondary, .secondary-icon, .tertiary, .primary):hover {
-  }*/
   .download {
     transition: all 0.05s ease;
   }
@@ -330,11 +324,6 @@ input[type="file"]::file-selector-button {
     transition: all 0.1s ease;
   }
   .download:active {
-    filter: brightness(1.1);
+    filter: brightness(1.3);
   }
-  /* @media (hover: none) {
-    .button:hover {
-      box-shadow: inherit;
-    }
-  } */
 }
