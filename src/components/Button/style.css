@@ -1,7 +1,6 @@
 /* =========
     Global
    ========= */
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -58,11 +57,9 @@
   --download-hover-green: var(--download-hover-green-light);
   --download-active-green: var(--download-active-green-light);
 }
-
 /* =========
-          layout
-          ========= */
-
+    layout
+   ========= */
 body {
   background-color: var(--background);
   display: flex;
@@ -71,7 +68,6 @@ body {
   height: 100vh;
   flex-wrap: wrap;
 }
-
 .component {
   display: flex;
   background-color: var(--component-bg);
@@ -103,7 +99,6 @@ body {
   padding: 1.8rem;
   width: 100%;
 }
-
 button {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -113,12 +108,6 @@ button {
   user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
-/* 
-  .widget {
-    /* margin: 1.5rem; */
-/* display: inline-flex; 
-  } */
-
 .button {
   display: inline-flex;
   justify-content: center;
@@ -132,11 +121,9 @@ button {
   transition: 0.1s all ease;
   /* overflow: hidden; */
 }
-
 .primary {
   background-image: var(--primary-gradient);
 }
-
 .secondary {
   color: var(--primary);
   background-color: var(--secondary-bg);
@@ -148,24 +135,20 @@ button {
   background-color: var(--secondary-bg);
   border: 2.4px solid hsla(230, 100%, 58%, 0.507);
 }
-
 .secondary-icon span {
   padding-left: 5px;
 }
-
 .secondary-icon svg {
   position: relative;
   top: 1px;
   right: 3px;
   pointer-events: none;
 }
-
 .tertiary {
   color: var(--tertiary-text-light);
   background-color: var(--tertiary-bg);
   border: 2.4px solid var(--tertiary-border-light);
 }
-
 .tertiary-disabled {
   color: var(--tertiary-disabled-text-light);
   background-color: var(--bg-light);
@@ -315,8 +298,6 @@ input[type="file"]::file-selector-button {
   }
 }
 @media screen and (max-width: 600px) {
-  /*:is(.secondary, .secondary-icon, .tertiary, .primary):hover {
-      }*/
   .download {
     transition: all 0.05s ease;
   }
@@ -345,9 +326,4 @@ input[type="file"]::file-selector-button {
   .download:active {
     filter: brightness(1.3);
   }
-  /* @media (hover: none) {
-        .button:hover {
-          box-shadow: inherit;
-        }
-      } */
 }
