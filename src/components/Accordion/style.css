@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.icon {
+  padding: 0;
+  margin: 0;
+  transition: all 0.5s ease-in-out;
+}
+body {
+  background-color: #222222;
+  font-family: "Kumbh Sans", sans-serif;
+  color: white;
+}
+.container {
+  width: 75%;
+  max-width: 530px;
+  margin: 5rem auto;
+}
+
+.accordion-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 2.5rem;
+  line-height: 1.5rem;
+  cursor: pointer;
+}
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+.answer-content {
+  margin: 15px 0px;
+}
+
+.break {
+  height: 1px;
+  /* background-image: linear-gradient(to right, transparent, white, transparent); */
+  background-color: rgb(118, 118, 118);
+  margin: 10px 0px;
+}
+
+.hidden {
+  transform: rotate(180deg);
+  /* background-color: blue; */
+}
+.active {
+  font-weight: 600;
+}
