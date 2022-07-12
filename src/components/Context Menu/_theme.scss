@@ -1,0 +1,64 @@
+/* Color styles */
+$colors: (
+	light: (
+		text: (
+			100: hsl(var(--h) var(--s) 10%),
+		),
+		surface: (
+			100: hsl(var(--h) var(--s) 100%),
+			200: hsl(var(--h) var(--s) var(--l)),
+			300: hsl(var(--h) var(--s) 92%),
+			400: hsl(var(--h) var(--s) 90%),
+		),
+		'red': (
+			100: hsl(0 56% 93%),
+			200: hsl(0 72% 51%),
+		),
+	),
+	dark: (
+		text: (
+			100: hsl(var(--h) var(--s) 80%),
+		),
+		surface: (
+			100: hsl(var(--h) var(--s) 8%),
+			200: hsl(var(--h) var(--s) 12%),
+			300: hsl(var(--h) var(--s) 14%),
+			400: hsl(var(--h) var(--s) 15%),
+		),
+		'red': (
+			100: hsl(0 20% 15%),
+			200: hsl(0 50% 51%),
+		),
+	),
+);
+
+@mixin color-scheme($type: light) {
+	--accent: var(--accent-#{$type});
+	@each $prop, $value in map-get($colors, $type) {
+		@each $shade, $val in $value {
+			--#{$prop}-#{$shade}: #{$val};
+		}
+	}
+}
+
+:root {
+	--h: 228;
+	--s: 87%;
+	--l: 95%;
+}
+
+[color-scheme='dark'] {
+	--s: 5%;
+	@include color-scheme(dark);
+}
+
+[color-scheme='light'] {
+	@include color-scheme(light);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--s: 5%;
+		@include color-scheme(dark);
+	}
+}

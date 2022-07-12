@@ -23,7 +23,6 @@ button {
 	font-size: var(--size);
 	padding: 0.5em 1em;
 	text-align: left;
-	color: inherit;
 	font-family: inherit;
 }
 
@@ -40,8 +39,10 @@ h6 {
 	font-family: 'Poppins', serif;
 }
 
-input {
+input,
+button {
 	font-family: inherit;
+	color: inherit;
 }
 
 img {
@@ -52,6 +53,10 @@ img {
 svg,
 .icon {
 	line-height: 0;
+
+	path {
+		stroke: currentColor;
+	}
 }
 
 svg {

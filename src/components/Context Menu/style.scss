@@ -1,0 +1,60 @@
+@use './theme' as *;
+@use '../../styles/global' as *;
+
+body {
+	background-color: var(--surface-200);
+	color: var(--text-100);
+	display: grid;
+	place-items: center;
+	// font-size: 1.1rem;
+}
+
+$spacing: 0.25rem;
+
+.menu {
+	background-color: var(--surface-100);
+	min-width: calc($spacing * 40);
+	display: flex;
+	flex-direction: column;
+	padding: $spacing;
+	gap: $spacing;
+	border-radius: calc($spacing * 2);
+	border: 1px solid var(--surface-400);
+	user-select: none;
+
+	&__item {
+		display: flex;
+		gap: calc($spacing * 1.25);
+		align-items: center;
+		line-height: 1;
+		min-height: calc($spacing * 8);
+		padding: calc($spacing * 2) $spacing;
+		border-radius: $spacing;
+
+		&:hover {
+			background-color: var(--surface-200);
+		}
+
+		&:active {
+			filter: brightness(90%);
+		}
+
+		&--more :last-child {
+			margin-left: auto;
+		}
+
+		&--danger {
+			color: var(--red-200);
+
+			&:hover {
+				background-color: var(--red-100);
+			}
+		}
+	}
+}
+
+hr {
+	height: 1px;
+	border: none;
+	background-color: var(--surface-200);
+}
