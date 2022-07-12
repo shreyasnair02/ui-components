@@ -1,4 +1,4 @@
-let onebit = 0; //set this bit to zero, to keep multiple accordion items open at a time
+let onebit = 1; //set this bit to zero, to keep multiple accordion items open at a time
 let accordionItems = document.body.querySelectorAll('.accordion-items');
 accordionItems.forEach(accordionItem => {
     accordionItem.addEventListener('click', event => {
