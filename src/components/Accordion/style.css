@@ -17,14 +17,14 @@
   --secondary-light: #dce1e7;
   --bg-light: #e7ecfd;
   --text-light: #31323f;
-  --break-light: #484f56;
+  --break-light: #484f5679;
   --break-light-gradient: linear-gradient(
     to right,
     transparent,
     #31323f,
     transparent
   );
-  --chevron-light: #ee0000;
+  --chevron-light: #818181;
   /*default colors*/
   --primary: var(--primary-dark);
   --secondary-: var(--secondary-dark);
@@ -103,10 +103,10 @@ body {
 } 
 */
 .break {
-  height: 1px;
-  background-color: var(--break);
+  /* height: 1px;
+  background-color: var(--break); */
   margin: 10px 0px;
-  /* border-top: 1px solid var(--break); */
+  border-top: 1px solid var(--break);
 }
 .hidden {
   transform: rotate(180deg);
