@@ -23,6 +23,14 @@ $spacing: 0.25rem;
 	clip-path: circle(0% at 0 0);
 	animation: circle-in 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 
+	&.left-anim {
+		--toggle: 1;
+	}
+
+	&.right-anim {
+		--toggle: -1;
+	}
+
 	&__item {
 		display: flex;
 		gap: calc($spacing * 1.25);
@@ -37,12 +45,24 @@ $spacing: 0.25rem;
 			background-color: var(--surface-200);
 		}
 
-		&:active {
-			filter: brightness(var(--brightness));
+		&--more {
+			position: relative;
 		}
 
-		&--more svg:last-of-type {
-			margin-left: auto;
+		&--more-options {
+			position: absolute;
+			left: calc(100% * var(--toggle));
+			top: 0;
+			animation: rise 200ms ease-in-out forwards;
+			clip-path: none;
+		}
+
+		:is(&--more:hover, &--more:focus-within) > &--more-options {
+			display: flex;
+		}
+
+		&:active {
+			filter: brightness(var(--brightness));
 		}
 
 		&--danger {
@@ -52,17 +72,27 @@ $spacing: 0.25rem;
 				background-color: var(--red-100);
 			}
 		}
+	}
 
-		&--more-options {
-			position: absolute;
-			// left: 100%;
-		}
+	&__icon-chevron-right {
+		margin-left: auto;
 	}
 }
 
 @keyframes circle-in {
 	to {
-		clip-path: circle(150% at 0 0);
+		clip-path: circle(210% at 0 0);
+	}
+}
+
+@keyframes rise {
+	from {
+		transform: translateY(10px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
 	}
 }
 
