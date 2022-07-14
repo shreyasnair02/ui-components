@@ -25,7 +25,7 @@ body {
 	@media (hover: none), (pointer: coarse) {
 		&::before {
 			content: 'LONG PRESS FOR MENU';
-			font-size: 0.8rem;
+			font-size: 0.6rem;
 		}
 	}
 }
