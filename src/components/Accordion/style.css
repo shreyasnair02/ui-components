@@ -44,6 +44,9 @@
   margin: 0;
   transition: all 0.2s ease-in-out;
 }
+.span {
+  height: 20px;
+}
 svg {
   stroke: var(--chevron);
 }
@@ -65,7 +68,6 @@ body {
 .heading {
   display: flex;
   width: 100%;
-  /* width: 100vw; */
   justify-content: center;
   align-items: center;
   /* color: var(--primary); */
@@ -76,6 +78,12 @@ body {
   margin: 2rem auto 5rem auto;
 }
 .accordion-items {
+  width: 100%;
+  background-color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  border: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -110,7 +118,6 @@ body {
 }
 .hidden {
   transform: rotate(180deg);
-  /* background-color: blue; */
 }
 .active {
   font-weight: 500;
