@@ -73,6 +73,7 @@ body {
   background-color: var(--component-bg);
   flex-wrap: wrap;
   flex-direction: column;
+  /* width: 80%; */
   width: 85%;
   height: auto;
   border-radius: 6px;
@@ -176,8 +177,10 @@ button {
   /* flex-shrink: 3; */
   border-radius: 6px;
   -webkit-tap-highlight-color: transparent;
+  --webkit-touch-callout: none;
   inline-size: 100%;
   user-select: none;
+  /*width: min-content; */
 }
 
 input[type="file"]::file-selector-button {
@@ -320,8 +323,9 @@ input[type="file"]::file-selector-button {
   }
 
   :is(.secondary, .secondary-icon, .tertiary, .primary):active {
-    transform: translateY(0.12em);
-    transition: all 0.1s ease;
+    /* transform: translateY(0.12em); */
+    transform: scale(0.8);
+    transition: all 0.15s ease-in-out;
   }
   .download:active {
     filter: brightness(1.3);
