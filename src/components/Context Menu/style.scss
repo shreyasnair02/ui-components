@@ -5,17 +5,27 @@ body {
 	background-color: var(--surface-200);
 	color: var(--text-100);
 
+	&::before {
+		display: block;
+		position: absolute;
+		color: var(--text-100);
+		opacity: 0.3;
+		letter-spacing: 3px;
+		transform: translate(-50%);
+		left: 50%;
+		bottom: 2rem;
+	}
+
 	@media (hover: hover), (pointer: fine) {
 		&::before {
 			content: 'RIGHT CLICK FOR MENU';
-			display: block;
-			position: absolute;
-			color: var(--text-100);
-			opacity: 0.3;
-			letter-spacing: 3px;
-			transform: translate(-50%);
-			left: 50%;
-			bottom: 2rem;
+		}
+	}
+
+	@media (hover: none), (pointer: coarse) {
+		&::before {
+			content: 'LONG PRESS FOR MENU';
+			font-size: 0.8rem;
 		}
 	}
 }
