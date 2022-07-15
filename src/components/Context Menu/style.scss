@@ -61,6 +61,7 @@ $spacing: 0.25rem;
 		}
 
 		&--more-options {
+			--tX: translateX(0);
 			position: absolute;
 			left: calc(100% * var(--toggle));
 			top: 0;
@@ -86,6 +87,7 @@ $spacing: 0.25rem;
 			}
 
 			&--more-options {
+				--tX: translateX(-50%);
 				position: static;
 				display: flex;
 				border: none;
@@ -113,6 +115,7 @@ $spacing: 0.25rem;
 
 	@include touch-device {
 		& {
+			--tX: translateX(-50%);
 			animation: rise 250ms cubic-bezier(0.23, 1, 0.32, 1);
 			width: min($spacing * 60, 75%);
 			left: 50%;
@@ -123,7 +126,6 @@ $spacing: 0.25rem;
 		}
 
 		&__item--more-options {
-			bottom: auto;
 			position: static;
 			animation: none;
 			transform: none;
@@ -138,11 +140,11 @@ $spacing: 0.25rem;
 
 @keyframes rise {
 	from {
-		transform: translateY(10px) translateX(-50%);
+		transform: translateY(10px) var(--tX);
 		opacity: 0;
 	}
 	to {
-		transform: translateY(0) translateX(-50%);
+		transform: translateY(0) var(--tX);
 		opacity: 1;
 	}
 }

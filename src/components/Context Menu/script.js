@@ -77,9 +77,7 @@ document.addEventListener('contextmenu', (e) => {
 
 document.addEventListener('click', (e) => {
 	if (menu.contains(e.target)) return;
-	let translateX = 0;
 	if (touchDevice.matches) {
-		// translateX = -50;
 		menu
 			.animate(
 				[
@@ -97,8 +95,8 @@ document.addEventListener('click', (e) => {
 	menu
 		.animate(
 			[
-				{ transform: `scale(1) translate(${translateX}%, 0)`, opacity: 1 },
-				{ transform: `scale(0.9) translate(${translateX}%, 20px)`, opacity: 0 },
+				{ transform: `scale(1) translateY(0)`, opacity: 1 },
+				{ transform: `scale(0.9) translateY(20px)`, opacity: 0 },
 			],
 			{ duration: 100, easing: 'ease-out' }
 		)
