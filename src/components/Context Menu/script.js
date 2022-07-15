@@ -1,7 +1,9 @@
 let menu = document.querySelector('.menu');
+let touchDevice = window.matchMedia('(hover: none), (pointer: coarse)');
 document.addEventListener('contextmenu', (e) => {
 	e.preventDefault();
 	menu.style.display = 'flex';
+	if (touchDevice.matches) return;
 	var width =
 		window.innerWidth ||
 		document.documentElement.clientWidth ||
@@ -75,11 +77,28 @@ document.addEventListener('contextmenu', (e) => {
 
 document.addEventListener('click', (e) => {
 	if (menu.contains(e.target)) return;
+	let translateX = 0;
+	if (touchDevice.matches) {
+		// translateX = -50;
+		menu
+			.animate(
+				[
+					{ transform: 'translate(-50%, 0)', opacity: 1 },
+					{ transform: 'translate(-50%, 10px)', opacity: 0 },
+				],
+				{
+					duration: 200,
+					easing: 'ease-in-out',
+				}
+			)
+			.finished.then(() => (menu.style.display = 'none'));
+		return;
+	}
 	menu
 		.animate(
 			[
-				{ transform: 'scale(1) translateY(0)', opacity: 1 },
-				{ transform: 'scale(0.9) translateY(20px)', opacity: 0 },
+				{ transform: `scale(1) translate(${translateX}%, 0)`, opacity: 1 },
+				{ transform: `scale(0.9) translate(${translateX}%, 20px)`, opacity: 0 },
 			],
 			{ duration: 100, easing: 'ease-out' }
 		)

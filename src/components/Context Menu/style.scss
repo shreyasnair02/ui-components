@@ -4,27 +4,24 @@
 body {
 	background-color: var(--surface-200);
 	color: var(--text-100);
+	-webkit-touch-callout: none;
 
 	&::before {
+		content: 'right click for menu';
 		display: block;
-		position: absolute;
+		position: fixed;
 		color: var(--text-100);
 		opacity: 0.3;
 		letter-spacing: 3px;
 		transform: translate(-50%);
 		left: 50%;
 		bottom: 2rem;
+		text-transform: uppercase;
 	}
 
-	@media (hover: hover), (pointer: fine) {
+	@include touch-device {
 		&::before {
-			content: 'RIGHT CLICK FOR MENU';
-		}
-	}
-
-	@media (hover: none), (pointer: coarse) {
-		&::before {
-			content: 'LONG PRESS FOR MENU';
+			content: 'long press for menu';
 			font-size: 0.6rem;
 		}
 	}
@@ -79,12 +76,58 @@ $spacing: 0.25rem;
 			filter: brightness(var(--brightness));
 		}
 
+		@include touch-device {
+			&--more {
+				padding: 0;
+				& > svg,
+				& > span {
+					display: none;
+				}
+			}
+
+			&--more-options {
+				position: static;
+				display: flex;
+				border: none;
+				padding: 0;
+				border-radius: $spacing;
+
+				& > &__item {
+					transform: none;
+				}
+			}
+
+			&:active {
+				background-color: var(--surface-200);
+			}
+		}
+
 		&--danger {
 			color: var(--red-200);
 
 			&:hover {
 				background-color: var(--red-100);
 			}
+		}
+	}
+
+	@include touch-device {
+		& {
+			animation: rise 250ms cubic-bezier(0.23, 1, 0.32, 1);
+			width: min($spacing * 60, 75%);
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: 2rem;
+			position: fixed;
+			transform-origin: center;
+		}
+
+		&__item--more-options {
+			bottom: auto;
+			position: static;
+			animation: none;
+			transform: none;
+			width: 100%;
 		}
 	}
 
@@ -95,11 +138,11 @@ $spacing: 0.25rem;
 
 @keyframes rise {
 	from {
-		transform: translateY(10px);
+		transform: translateY(10px) translateX(-50%);
 		opacity: 0;
 	}
 	to {
-		transform: translateY(0);
+		transform: translateY(0) translateX(-50%);
 		opacity: 1;
 	}
 }

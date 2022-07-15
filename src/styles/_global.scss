@@ -9,6 +9,7 @@ html,
 body {
 	min-height: 100vh;
 	font-family: 'Lato', sans-serif;
+	scroll-behavior: smooth;
 }
 
 button {
@@ -66,4 +67,10 @@ svg {
 .align-center {
 	display: flex;
 	align-items: center;
+}
+
+@mixin touch-device {
+	@media (hover: none), (pointer: coarse) {
+		@content;
+	}
 }
