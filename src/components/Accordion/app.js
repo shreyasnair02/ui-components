@@ -8,17 +8,14 @@ accordionItems.forEach(accordionItem => {
             currentlyActive.nextElementSibling.style.maxHeight = 0;
             currentlyActive.classList.toggle('active');
         }
+        accordionItem.classList.toggle('active');
         let spansvg = accordionItem.firstElementChild.firstElementChild.classList.toggle('hidden');
         let answer = accordionItem.nextElementSibling;
-        let answerContent = answer.firstElementChild;
-        if (accordionItem.firstElementChild.firstElementChild.classList.contains('hidden')) {
+        if (accordionItem.classList.contains('active')) {
             answer.style.maxHeight = answer.scrollHeight + "px";
-            console.log(answer.style.maxHeight);
-            accordionItem.classList.toggle('active');
         }
         else {
             answer.style.maxHeight = 0;
-            accordionItem.classList.toggle('active');
         }
     })
 })
