@@ -1,5 +1,6 @@
 let menu = document.querySelector('.menu');
 let touchDevice = window.matchMedia('(hover: none), (pointer: coarse)');
+
 document.addEventListener('contextmenu', (e) => {
 	e.preventDefault();
 	menu.style.display = 'flex';
@@ -80,28 +81,17 @@ document.addEventListener('contextmenu', (e) => {
 
 document.addEventListener('click', (e) => {
 	if (menu.contains(e.target)) return;
+	let translateX = 0;
 	if (touchDevice.matches) {
-		menu
-			.animate(
-				[
-					{ transform: 'translate(-50%, 0)', opacity: 1 },
-					{ transform: 'translate(-50%, 10px)', opacity: 0 },
-				],
-				{
-					duration: 200,
-					easing: 'cubic-bezier(0.23, 1, 0.32, 1)',
-				}
-			)
-			.finished.then(() => (menu.style.display = 'none'));
-		return;
+		translateX = -50;
 	}
 	menu
 		.animate(
 			[
-				{ transform: `scale(1) translateY(0)`, opacity: 1 },
-				{ transform: `scale(0.9) translateY(20px)`, opacity: 0 },
+				{ transform: `translate(${translateX}%, 0) scale(1)`, opacity: 1 },
+				{ transform: `translate(${translateX}%, 20px) scale(0.9)`, opacity: 0 },
 			],
-			{ duration: 100, easing: 'cubic-bezier(0.23, 1, 0.32, 1)' }
+			{ duration: 100, easing: 'ease-in-out' }
 		)
 		.finished.then(() => (menu.style.display = 'none'));
 });
