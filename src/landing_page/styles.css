@@ -109,7 +109,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  /* position: relative; */
 }
 .container {
   padding: 0 min(6rem, 10vw);
@@ -138,7 +138,8 @@ main {
 .wave {
   position: absolute;
   z-index: -1;
-  bottom: -115px;
+  /* bottom: -117px; */
+  bottom: 0%;
   right: 0%;
   width: fit-content;
   overflow: hidden;
