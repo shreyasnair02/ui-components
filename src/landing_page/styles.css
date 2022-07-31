@@ -207,11 +207,11 @@ main {
   background-color: var(--primary-cta-icon);
 }
 .leaf svg {
-  fill: var(--tertiary);
+  /* fill: var(--tertiary); */
   color: #323330;
   position: absolute;
   top: 0;
-  border: 0;
+
   right: 0;
 }
 .github-corner:hover .octo-arm {
