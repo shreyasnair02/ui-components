@@ -1,6 +1,14 @@
 @use './theme' as *;
 @use '../../styles/global' as *;
 
+svg {
+	line-height: 0;
+
+	path {
+		stroke: currentColor;
+	}
+}
+
 body {
 	background-color: var(--surface-200);
 	color: var(--text-100);
