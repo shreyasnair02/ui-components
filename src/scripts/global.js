@@ -4,8 +4,6 @@ let input = document.querySelector('.component-section__search');
 let componentWrapper = document.querySelector('.component-section__components');
 let results = projects;
 
-console.log(componentWrapper);
-
 const render = (results) => {
 	componentWrapper.innerHTML = '';
 	results.forEach((result) => componentWrapper.append(result.elem()));
@@ -24,5 +22,3 @@ input.addEventListener('keyup', () => {
 		render(results);
 	}
 });
-
-console.log(input);
