@@ -4,16 +4,25 @@ let input = document.querySelector('.component-section__search');
 let componentWrapper = document.querySelector('.component-section__components');
 let results = projects;
 
-console.log(componentWrapper)
+console.log(componentWrapper);
 
-results.forEach((result) => componentWrapper.append(result.elem()));
+const render = (results) => {
+	componentWrapper.innerHTML = '';
+	results.forEach((result) => componentWrapper.append(result.elem()));
+}
+
+render(results);
 
 input.addEventListener('keyup', () => {
-	if (input.length === 0) {
+	if (input.value.length === 0) {
 		results = projects;
+		render(results);
 	} else {
-		results = projects.filter((project) => project.name.includes(input.value));
+		results = projects.filter((project) =>
+			project.name.toLowerCase().includes(input.value.toLowerCase())
+		);
+		render(results);
 	}
 });
 
-console.log(results);
+console.log(input);
