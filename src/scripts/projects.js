@@ -16,6 +16,8 @@ function setAttributes(el, attrs) {
 
 let projects = projectArr.map((project) => ({
 	name: project,
+	path: `./components/${project}/index.html`,
+	illustration: `${project.replace(' ', '-').toLowerCase()}-illustration`,
 	elem() {
 		let projectElem = document.createElement('a');
 		setAttributes(projectElem, {
@@ -25,7 +27,7 @@ let projects = projectArr.map((project) => ({
 		});
 		projectElem.innerHTML = `
 			<svg class="component-section__illustration">
-				<use href=#${project.replace(' ', '-').toLowerCase()}-illustration />
+				<use href=#${this.illustration} />
 			</svg>
 			<span class="component-section__component-name">${this.name}</span>
 		`.trim();
