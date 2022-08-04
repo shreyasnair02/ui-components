@@ -14,12 +14,12 @@ document.addEventListener('keydown', (e) => {
 })
 document.addEventListener('click', (e) => {
     if (!e.target.classList.contains('.input-dropdown')) {
-        toggleVisible(false);
+        toggleVisibility(false);
     }
 })
 input.addEventListener("keyup", (e) => {
     toggleVisibility(false);
-    if (!(event.key == 'ArrowUp' || event.key == 'ArrowDown')) {
+    if (!(e.key == 'ArrowUp' || e.key == 'ArrowDown' || e.key == 'Enter')) {
         cursor = 0;
     }
     if (input.value.length > 0 && input.value != " ") {
@@ -30,8 +30,6 @@ input.addEventListener("keyup", (e) => {
     }
     if (visible) {
         let listItems = document.querySelectorAll(".list__item");
-
-
         switch (e.key) {
             case 'Enter': input.value = listItems[cursor].innerHTML; toggleVisibility(false); cursor = 0; break;
             case 'ArrowUp': if (cursor > 0) {
