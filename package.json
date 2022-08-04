@@ -1,29 +1,28 @@
 {
-  "name": "ui-components",
-  "version": "1.0.0",
-  "description": "A collection of web ui components",
-  "source": "./src/index.html",
-  "scripts": {
-    "start": "parcel",
-    "build": "parcel build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Vikram-Hegde/ui-components.git"
-  },
-  "keywords": [
-    "ui",
-    "components",
-    "web"
-  ],
-  "author": "Vikram, Shreyas",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Vikram-Hegde/ui-components/issues"
-  },
-  "homepage": "https://github.com/Vikram-Hegde/ui-components#readme",
-  "devDependencies": {
-    "@parcel/transformer-sass": "^2.5.0",
-    "parcel": "latest"
-  }
+	"name": "ui-components",
+	"version": "1.0.0",
+	"description": "A collection of web ui components",
+	"scripts": {
+		"start": "parcel ./src/*.html ./src/components/*/index.html",
+		"build": "parcel build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Vikram-Hegde/ui-components.git"
+	},
+	"keywords": [
+		"ui",
+		"components",
+		"web"
+	],
+	"author": "Vikram, Shreyas",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Vikram-Hegde/ui-components/issues"
+	},
+	"homepage": "https://github.com/Vikram-Hegde/ui-components#readme",
+	"devDependencies": {
+		"@parcel/transformer-sass": "^2.5.0",
+		"parcel": "latest"
+	}
 }
