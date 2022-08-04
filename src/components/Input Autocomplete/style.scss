@@ -1,0 +1,65 @@
+@use "./variables" as *;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  font-family: "Outfit", sans-serif;
+  background-color: var(--bg);
+  overflow: hidden;
+}
+.input__section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+input[type="text"] {
+  box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+    rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+  background-color: var(--input-bg);
+  font-size: clamp(1rem, 0.4vw, 2rem);
+  width: min(400px, 60vw);
+  height: 50px;
+  padding: 6px;
+  border: none;
+  border-radius: 5px;
+  color: var(--text);
+  font-weight: 500;
+  &:focus-visible {
+    outline-style: solid;
+    outline-color: #429aff;
+    outline-offset: 2px;
+    outline-width: 2px;
+  }
+  &::placeholder {
+    color: var(--text);
+    opacity: 0.3;
+  }
+}
+.input__list {
+  position: absolute;
+  list-style: none;
+  width: 100%;
+  margin-top: 1px;
+  z-index: -1;
+}
+.list__item {
+  background-color: var(--input-bg);
+  width: 100%;
+  cursor: pointer;
+  color: var(--text);
+  padding: clamp(5px, 10px, 50px) 5px;
+  font-weight: 350;
+  border: 0.5px solid var(--border);
+  border-top: none;
+  font-size: 1rem;
+  &:hover {
+    background-color: var(--highlight);
+  }
+}
+.highlight {
+  background-color: var(--highlight);
+}
