@@ -7,18 +7,15 @@ let results = projects;
 const render = (results) => {
 	componentWrapper.innerHTML = '';
 	results.forEach((result) => componentWrapper.append(result.elem()));
-}
+};
 
 render(results);
 
 input.addEventListener('keyup', () => {
-	if (input.value.length === 0) {
-		results = projects;
-		render(results);
-	} else {
+	if (input.value.length === 0) results = projects;
+	else
 		results = projects.filter((project) =>
 			project.name.toLowerCase().includes(input.value.toLowerCase())
 		);
-		render(results);
-	}
+	render(results);
 });
