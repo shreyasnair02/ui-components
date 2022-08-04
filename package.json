@@ -4,7 +4,7 @@
 	"description": "A collection of web ui components",
 	"scripts": {
 		"start": "parcel ./src/*.html ./src/components/*/index.html",
-		"build": "parcel build"
+		"build": "parcel build ./src/*.html ./src/components/*/index.html"
 	},
 	"repository": {
 		"type": "git",
