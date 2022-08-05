@@ -12,7 +12,7 @@ const render = (results) => {
 render(results);
 
 input.addEventListener('keyup', () => {
-	if (input.value.length === 0) results = projects;
+	if (input.value.trim().length === 0) results = projects;
 	else
 		results = projects.filter((project) =>
 			project.name.toLowerCase().includes(input.value.toLowerCase())
