@@ -48,6 +48,10 @@ body {
 *::before {
   box-sizing: border-box;
 }
+.frontpage-section {
+  position: relative;
+  height: 100vh;
+}
 nav {
   display: flex;
   justify-content: space-between;
@@ -102,7 +106,7 @@ main.main__section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 100px 0px 140px 0px;
+  margin: 100px 0px;
 }
 .container {
   padding: 0 min(6rem, 10vw);
@@ -129,6 +133,7 @@ main.main__section {
   color: var(--primary);
   font-size: var(--font-sm);
   font-weight: var(--fw-light);
+  margin: min(3vw, 20px) 0;
 }
 .hero {
   padding: 0 3.4rem;
@@ -225,7 +230,7 @@ main.main__section {
 .text__emphasis {
   color: var(--secondary);
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
   :root {
     --font-sm: 0.9rem;
     --font-med: 1.44rem;
@@ -233,7 +238,7 @@ main.main__section {
   }
   nav {
     flex-direction: column;
-    gap: 1ch;
+    gap: 1.5ch;
   }
   main {
     flex-direction: column-reverse;
