@@ -98,11 +98,11 @@ li.active a::before {
 li.active a {
   color: var(--tertiary);
 }
-main {
+main.main__section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 180px;
+  margin: 100px 0px 140px 0px;
 }
 .container {
   padding: 0 min(6rem, 10vw);
@@ -204,24 +204,24 @@ main {
   display: inline;
 }
 /*
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-*/
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  */
 .text__emphasis {
   color: var(--secondary);
 }

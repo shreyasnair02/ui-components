@@ -12,7 +12,7 @@ function changeTab() {
 }
 document.addEventListener('scroll', () => {
     let topL = window.pageYOffset || document.documentElement.scrollTop;
-    if (topL > windowWidth / 2) {
+    if (topL > windowWidth / 4) {
         options__li[0].classList.remove('active');
         options__li[1].classList.add('active');
     }
