@@ -240,9 +240,9 @@ main.main__section {
     flex-direction: column;
     gap: 1.5ch;
   }
-  main {
+  main.main__section {
     flex-direction: column-reverse;
-    margin: 0;
+    margin: 5vw 0px;
   }
   .wave {
     display: none;
