@@ -240,6 +240,10 @@ main.main__section {
     flex-direction: column;
     gap: 1.5ch;
   }
+  .frontpage-section {
+    height: 110vh;
+    overflow: hidden;
+  }
   main.main__section {
     flex-direction: column-reverse;
     margin: 5vw 0px;
