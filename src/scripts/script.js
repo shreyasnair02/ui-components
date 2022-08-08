@@ -20,4 +20,18 @@ input.addEventListener('keyup', () => {
 	render(results);
 });
 
+let target = document.querySelector('.component-section__header')
 
+let options = {
+	rootMargin: '0px',
+	threshold: 1
+}
+
+let observer = new IntersectionObserver((entries, observer) => {
+	entries.forEach(entry => {
+		console.log(entry.isIntersecting, entry.intersectionRatio);
+		console.log(entry.boundingClientRect.top);
+	})
+}, options)
+
+observer.observe(target);

@@ -36,6 +36,8 @@ body {
     grid-column: 1 / -1;
     grid-template-columns: inherit;
     padding: clamp(2rem, 3vw, 4rem) 0;
+    position: sticky;
+    top: 0;
 
     & > * {
       grid-column: 2 / -2;
@@ -46,6 +48,7 @@ body {
     font-weight: 500;
     @extend %uppercase;
     margin-bottom: clamp(0.75rem, 3vw, 1.5rem);
+    font-size: clamp(1.5rem, 3vw - 1rem, 2rem);
   }
 
   &__search-bar {
