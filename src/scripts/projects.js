@@ -7,6 +7,7 @@ let projectArr = [
 	'Context Menu',
 	'Dropdown',
 	'Tag Input',
+	'Input Autocomplete'
 ];
 
 function setAttributes(el, attrs) {
