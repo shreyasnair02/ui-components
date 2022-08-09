@@ -23,6 +23,7 @@ body {
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: min-content;
   width: min(1920px, 100%);
+  min-height: 100vh;
   margin-inline: auto;
 
   svg {
@@ -55,7 +56,6 @@ body {
     grid-column: 2 / 7;
     height: 40px;
     display: flex;
-    // max-width: 35rem;
     background-color: hsla(0, 0%, 100%, 0.2);
     @extend %align-center;
     border-radius: 0.25rem;

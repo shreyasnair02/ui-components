@@ -11,7 +11,7 @@ const render = (results) => {
 
 render(results);
 
-input.addEventListener('keyup', () => {
+input.addEventListener('input', () => {
 	if (input.value.trim().length === 0) results = projects;
 	else
 		results = projects.filter((project) =>
