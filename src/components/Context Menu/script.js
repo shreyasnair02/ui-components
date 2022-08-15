@@ -6,11 +6,11 @@ document.addEventListener('contextmenu', (e) => {
 	menu.style.display = 'flex';
 	if (touchDevice.matches) return;
 
-	var width =
+	const width =
 		window.innerWidth ||
 		document.documentElement.clientWidth ||
 		document.body.clientWidth;
-	var height =
+	const height =
 		window.innerHeight ||
 		document.documentElement.clientHeight ||
 		document.body.clientHeight;
