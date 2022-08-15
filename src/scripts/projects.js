@@ -27,7 +27,11 @@ let projects = projectArr.map((project) => ({
 			<svg class="component-section__illustration">
 				<use href=#${project.replace(' ', '-').toLowerCase()}-illustration />
 			</svg>
-			<span class="component-section__component-name">${this.name}</span>
+			<div class="component-section__component-name">${this.name}
+				<svg height="20" width="20" class="component-section__external-link">
+					<use href="#external-link" />	
+				</svg>	
+			</div>
 		`.trim();
 		return projectElem;
 	},

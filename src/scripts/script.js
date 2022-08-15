@@ -1,4 +1,5 @@
 import projects from './projects.js';
+import './firstpage.js';
 
 let input = document.querySelector('.component-section__search');
 let componentWrapper = document.querySelector('.component-section__components');
