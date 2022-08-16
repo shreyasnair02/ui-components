@@ -2,6 +2,8 @@
 @use './global' as *;
 @use './firstpage' as *;
 
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&display=swap');
+
 %uppercase {
 	text-transform: uppercase;
 	letter-spacing: 2px;
