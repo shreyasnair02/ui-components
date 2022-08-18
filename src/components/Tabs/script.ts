@@ -9,17 +9,12 @@ tabsWrapper.addEventListener('mouseover', (e) => {
     highlighter.style.opacity = '1';
     if(elem.classList.contains('tab') && !bool) {
         let bounds = elem.getBoundingClientRect();
-        highlighter.style.left = 'auto';
-        highlighter.style.scale = 'auto';
         highlighter.setAttribute('style', `height: ${bounds.height}px; width: ${bounds.width}px; top: ${bounds.top}px; left: ${bounds.left}px;`)
         bool = true;
     } else if (bool && elem.classList.contains('tab')) {
-        let currentBounds = highlighter.getBoundingClientRect();
         let updatedBounds = elem.getBoundingClientRect();
-        let deltaW = updatedBounds.width / currentBounds.width;
-        let deltaX = updatedBounds.left;
-        highlighter.style.left = `${deltaX}px`;
-        highlighter.style.scale = `${deltaW} 1`;
+        highlighter.style.left = `${updatedBounds.left}px`;
+        highlighter.style.width = `${updatedBounds.width}px`;
     }
 })
 

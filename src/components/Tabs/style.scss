@@ -10,11 +10,13 @@ body {
 
 .highlighter {
   position: absolute;
-  transition: all 0.25s ease-in-out;
-  transition-property: opacity, scale, left;
-  transform-origin: top left;
+  left: var(--deltaX);
+  width: var(--deltaW);
+  transition: all 0.15s ease-in-out;
+  transition-property: opacity, width, left;
   z-index: -1;
   background-color: #8ab4f8;
+  will-change: width, left;
 }
 
 .tab-content {
