@@ -4,18 +4,17 @@ body {
   @extend %centered;
 }
 
-button {
-  --l: 95%;
-  --bg: hsl(0 0% var(--l));
-  background-color: var(--bg);
+.tabs {
+  isolation: isolate;
+}
 
-  &:hover {
-    --l: 92%;
-  }
-
-  &:active {
-    --l: 88%;
-  }
+.highlighter {
+  position: absolute;
+  transition: all 0.25s ease-in-out;
+  transition-property: opacity, scale, left;
+  transform-origin: top left;
+  z-index: -1;
+  background-color: #8ab4f8;
 }
 
 .tab-content {
