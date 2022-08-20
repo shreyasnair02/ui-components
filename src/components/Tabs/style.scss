@@ -1,42 +1,87 @@
 @use '../../styles/global' as *;
 
 body {
-  @extend %centered;
+	@extend %centered;
+	padding: 1rem;
+}
+
+.tabs-wrapper {
+	background-color: hsl(0 0% 95%);
+	padding: 0.25rem 0.5rem;
+	border-radius: 0.5rem;
+	overflow: hidden auto;
+	width: min(35rem, 100%);
+	height: min(35rem, 40vh);
 }
 
 .tabs {
-  isolation: isolate;
+	isolation: isolate;
+	border-bottom: 2px solid hsl(0 0% 80%);
+	padding: 0.25rem 0;
+	pointer-events: none;
 }
 
 .highlighter {
-  position: absolute;
-  transition: all 0.15s ease-in-out;
-  transition-property: opacity;
-  transform-origin: top left;
-  z-index: -1;
-  background-color: #8ab4f8;
-  will-change: width;
+	position: absolute;
+	transition: all 0.15s ease-in-out;
+	transition-property: opacity;
+	transform-origin: top left;
+	z-index: -1;
+	border-radius: 0.25rem;
+	background-color: hsl(0 0% 85%);
+	will-change: width;
 }
 
 .transition {
-  transition-property: opacity, width, transform;
+	transition-property: opacity, width, transform;
+}
+
+.tab {
+	position: relative;
+	padding: 0.25rem 0.8rem;
+	pointer-events: auto;
+	margin: 0;
+	color: hsl(0 0% 45%);
+  user-select: none;
+
+	&:hover {
+		color: hsl(0 0% 15%);
+	}
+}
+
+.tab--active {
+	color: hsl(0 0% 15%);
+
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		inset: auto 0 -6px 0;
+		height: 2px;
+		background-color: black;
+	}
+}
+
+.tabs-content {
+	padding: 0.75rem 0;
 }
 
 .tab-content {
-  display: none;
+	display: none;
 }
 
 .show {
-  display: block;
-  animation: slideIn 0.25s ease-in-out forwards;
+	display: block;
+	animation: slideIn 0.25s ease-in-out forwards;
 }
 
 @keyframes slideIn {
-  from {
-    opacity: 0;
-    translate: -30px 0;
-  } to {
-    opacity: 1;
-    translate: 0;
-  }
+	from {
+		translate: var(--translate) 0;
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+		translate: 0;
+	}
 }

@@ -5,13 +5,17 @@ class Tabs {
 	private tabWrapper: HTMLDivElement;
 	private firstBounds: DOMRect;
 	private left: number;
+	private previousIndex: number;
+	private tabContentParent: HTMLDivElement;
 
 	constructor() {
 		this.tabWrapper = document.querySelector('.tabs');
 		this.tabs = document.querySelectorAll('.tab');
+		this.tabContentParent = document.querySelector('.tabs-content');
 		this.tabContent = document.querySelectorAll('.tab-content');
 		this.highlighter = document.querySelector('.highlighter');
 		this.left = 0;
+		this.previousIndex = 0;
 
 		// bindings, changing context of _this_
 		this.mouseover = this.mouseover.bind(this);
@@ -26,11 +30,11 @@ class Tabs {
 		this.setInitialBounds();
 		this.tabWrapper.addEventListener('mouseover', this.mouseover);
 		this.tabWrapper.addEventListener('mouseleave', () => {
-			this.highlighter.style.opacity = '0'
+			this.highlighter.style.opacity = '0';
 		});
 		this.tabWrapper.addEventListener('mouseenter', () => {
 			this.highlighter.classList.remove('transition');
-			this.highlighter.style.opacity = '1'
+			this.highlighter.style.opacity = '1';
 		});
 	}
 
@@ -43,7 +47,6 @@ class Tabs {
 			deltaX: left - this.left,
 			deltaW: width,
 		};
-		console.log(updatedBounds);
 		this.highlighter.style.width = `${updatedBounds.deltaW}px`;
 		this.highlighter.style.transform = `translateX(${updatedBounds.deltaX}px)`;
 	}
@@ -58,9 +61,26 @@ class Tabs {
 	}
 
 	switchTab(idx) {
-		const active: HTMLDivElement = document.querySelector('.show');
-		active.classList.remove('show');
-		this.tabContent[idx].classList.add('show');
+		this.handleActive(idx, 'tab--active', this.tabs);
+		this.handleActive(idx, 'show', this.tabContent);
+	}
+
+	handleActive(
+		idx: number,
+		className: string,
+		elem: NodeListOf<HTMLButtonElement> | NodeListOf<HTMLDivElement>
+	) {
+		let getActive = document.querySelector(`.${className}`);
+		getActive?.classList.remove(className);
+		elem[idx].classList.add(className);
+		if (elem === this.tabs) {
+			if (this.previousIndex < idx) {
+				this.tabContentParent.style.setProperty('--translate', '-40px');
+			} else {
+				this.tabContentParent.style.setProperty('--translate', '40px');
+			}
+			this.previousIndex = idx;
+		}
 	}
 }
 
