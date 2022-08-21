@@ -19,6 +19,7 @@ class Tabs {
 
 		// bindings, changing context of _this_
 		this.mouseover = this.mouseover.bind(this);
+		this.setInitialBounds = this.setInitialBounds.bind(this);
 
 		this.addEventListeners();
 	}
@@ -36,6 +37,7 @@ class Tabs {
 			this.highlighter.classList.remove('transition');
 			this.highlighter.style.opacity = '1';
 		});
+		window.addEventListener('resize', this.setInitialBounds);
 	}
 
 	mouseover(e) {
@@ -52,10 +54,12 @@ class Tabs {
 	}
 
 	setInitialBounds() {
-		this.firstBounds = this.tabs[0].getBoundingClientRect();
+		console.log('i was called');
+
+		this.firstBounds = this.tabs[0]?.getBoundingClientRect();
 		this.highlighter.setAttribute(
 			'style',
-			`top: ${this.firstBounds.top}px; left: ${this.firstBounds.left}px; height: ${this.firstBounds.height}px`
+			`top: ${this.firstBounds.top}px; left: ${this.firstBounds.left}px; height: ${this.firstBounds.height}px;`
 		);
 		this.left = this.firstBounds.left;
 	}

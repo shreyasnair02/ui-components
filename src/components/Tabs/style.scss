@@ -15,6 +15,7 @@ body {
 	overflow: hidden auto;
 	inline-size: min(35rem, 100%);
 	block-size: min(35rem, 40vh);
+	border: 2px solid var(--surface-300);
 }
 
 .tabs {
@@ -22,6 +23,7 @@ body {
 	border-bottom: 2px solid var(--surface-300);
 	padding: 0.25rem 0;
 	pointer-events: none;
+	display: flex;
 }
 
 .highlighter {
@@ -33,6 +35,10 @@ body {
 	border-radius: 0.25rem;
 	background-color: var(--surface-300);
 	will-change: width;
+
+	@include touch-device {
+		display: none;
+	}
 }
 
 .transition {
@@ -81,7 +87,6 @@ body {
 .credits {
 	position: absolute;
 	inset: auto 1rem 1rem auto;
-	background-color: var(--surface-300);
 	line-height: 1;
 	padding-inline-start: 0.5rem;
 
