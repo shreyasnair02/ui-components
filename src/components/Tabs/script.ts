@@ -54,8 +54,6 @@ class Tabs {
 	}
 
 	setInitialBounds() {
-		console.log('i was called');
-
 		this.firstBounds = this.tabs[0]?.getBoundingClientRect();
 		this.highlighter.setAttribute(
 			'style',
