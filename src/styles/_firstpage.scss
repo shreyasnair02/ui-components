@@ -179,7 +179,7 @@ main.main__section {
 .icons {
   display: inline-flex;
   padding: 8px;
-  border-radius: 4px;
+  border-radius:  0 4px 4px 0;
 }
 .explore_btn {
   background-color: var(--tertiary);

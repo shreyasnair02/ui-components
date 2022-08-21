@@ -117,4 +117,18 @@ body {
 		width: 100%;
 		aspect-ratio: 16 / 10;
 	}
+
+	@media (hover: hover), (pointer: fine) {
+		&__external-link {
+			transform: translateY(5px);
+			opacity: 0;
+			transition: 0.15s ease-out;
+			transition-property: opacity, transform;
+		}
+
+		&__component:hover &__external-link {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
 }
