@@ -113,7 +113,7 @@ main.main__section {
   content: "";
   background: url("../images/toollm.svg") no-repeat center center;
   position: absolute;
-  top: -50px;
+  top: -60px;
   left: -25px;
   width: 55%;
   height: 125%;
@@ -222,6 +222,10 @@ main.main__section {
   }
   .wave {
     display: none;
+  }
+  .title .line::before {
+    top: -55px;
+    left: -21px;
   }
 }
 @media (prefers-color-scheme: dark) {
