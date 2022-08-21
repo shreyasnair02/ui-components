@@ -98,7 +98,7 @@ main.main__section {
   margin: 100px 0px;
 }
 .container {
-  padding: 0 min(6rem, 10vw);
+  padding: 0 min(7rem, 10vw);
   margin: min(6rem, 7vw) 0;
 }
 .title {
@@ -114,7 +114,7 @@ main.main__section {
   background: url("../images/toollm.svg") no-repeat center center;
   position: absolute;
   top: -60px;
-  left: -25px;
+  left: -27px;
   width: 55%;
   height: 125%;
 }
@@ -125,7 +125,7 @@ main.main__section {
   margin: min(3vw, 20px) 0;
 }
 .hero {
-  padding: 0 3.4rem;
+  padding: 0 1rem;
 }
 .hero__img {
   width: 100%;
@@ -210,6 +210,7 @@ main.main__section {
   }
   nav {
     flex-direction: column;
+
     gap: 1.5ch;
   }
   .frontpage-section {
@@ -219,6 +220,7 @@ main.main__section {
   main.main__section {
     flex-direction: column-reverse;
     margin: 5vw 0px;
+    gap: 5ch;
   }
   .wave {
     display: none;
@@ -226,6 +228,9 @@ main.main__section {
   .title .line::before {
     top: -55px;
     left: -21px;
+  }
+  .container {
+    padding: 0 min(6rem, 10vw) 0 min(6rem, 14vw);
   }
 }
 @media (prefers-color-scheme: dark) {
