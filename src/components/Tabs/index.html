@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Tabs</title>
-	<link rel="stylesheet" href="style.scss">
-	<script src="./script.ts" type="module"></script>
-</head>
-<body>
-	<div class="tabs-wrapper">
-		<div class="tabs">
-			<div class="highlighter" role="presentation"></div>
-			<button class="tab tab--active">Overview</button><button class="tab">Analytics</button><button class="tab">Long text to test cause : )</button>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tabs</title>
+		<link rel="stylesheet" href="style.scss" />
+		<script src="./script.ts" type="module"></script>
+	</head>
+	<body>
+		<div class="tabs-wrapper">
+			<div class="tabs">
+				<div class="highlighter" role="presentation"></div>
+				<button class="tab tab--active">Overview</button
+				><button class="tab">Analytics</button
+				><button class="tab">Long text to test cause : )</button>
+			</div>
+			<div class="tabs-content">
+				<div class="tab-content show">Overview Content</div>
+				<div class="tab-content">Crunching some numbers for you...</div>
+				<div class="tab-content">
+					Making sure the security provided is tight enough
+				</div>
+			</div>
 		</div>
-		<div class="tabs-content">
-			<div class="tab-content show">Overview Content</div>
-			<div class="tab-content">Crunching some numbers for you...</div>
-			<div class="tab-content">Making sure the security provided is tight enough</div>
-		</div>
-	</div>
-</body>
+		<a class="credits" href="https://vercel.com/dashboard" target="_blank">
+			Inspiration<span class="logo">▲</span>
+		</a>
+	</body>
 </html>

@@ -1,22 +1,25 @@
 @use '../../styles/global' as *;
+@use './theme' as *;
 
 body {
 	@extend %centered;
 	padding: 1rem;
+	background-color: var(--surface-200);
+	color: var(--text-200);
 }
 
 .tabs-wrapper {
-	background-color: hsl(0 0% 95%);
+	background-color: var(--surface-100);
 	padding: 0.25rem 0.5rem;
 	border-radius: 0.5rem;
 	overflow: hidden auto;
-	width: min(35rem, 100%);
-	height: min(35rem, 40vh);
+	inline-size: min(35rem, 100%);
+	block-size: min(35rem, 40vh);
 }
 
 .tabs {
 	isolation: isolate;
-	border-bottom: 2px solid hsl(0 0% 80%);
+	border-bottom: 2px solid var(--surface-300);
 	padding: 0.25rem 0;
 	pointer-events: none;
 }
@@ -28,7 +31,7 @@ body {
 	transform-origin: top left;
 	z-index: -1;
 	border-radius: 0.25rem;
-	background-color: hsl(0 0% 85%);
+	background-color: var(--surface-300);
 	will-change: width;
 }
 
@@ -41,24 +44,24 @@ body {
 	padding: 0.25rem 0.8rem;
 	pointer-events: auto;
 	margin: 0;
-	color: hsl(0 0% 45%);
-  user-select: none;
+	color: var(--text-100);
+	user-select: none;
 
 	&:hover {
-		color: hsl(0 0% 15%);
+		color: var(--text-200);
 	}
 }
 
 .tab--active {
-	color: hsl(0 0% 15%);
+	color: var(--text-200);
 
 	&::after {
 		content: '';
 		display: block;
 		position: absolute;
 		inset: auto 0 -6px 0;
-		height: 2px;
-		background-color: black;
+		block-size: 2px;
+		background-color: var(--surface-400);
 	}
 }
 
@@ -73,6 +76,24 @@ body {
 .show {
 	display: block;
 	animation: slideIn 0.25s ease-in-out forwards;
+}
+
+.credits {
+	position: absolute;
+	inset: auto 1rem 1rem auto;
+	background-color: var(--surface-300);
+	line-height: 1;
+	padding-inline-start: 0.5rem;
+
+	.logo {
+		display: inline-flex;
+		height: 2rem;
+		width: 2rem;
+		justify-content: center;
+		align-items: center;
+		background-color: var(--surface-100);
+		margin-inline-start: 0.5rem;
+	}
 }
 
 @keyframes slideIn {

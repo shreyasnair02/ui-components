@@ -24,7 +24,7 @@ class Tabs {
 	}
 
 	addEventListeners() {
-		this.tabs.forEach((tab, idx) =>
+		this.tabs.forEach((tab: HTMLButtonElement, idx: number) =>
 			tab.addEventListener('click', () => this.switchTab(idx))
 		);
 		this.setInitialBounds();
@@ -60,7 +60,7 @@ class Tabs {
 		this.left = this.firstBounds.left;
 	}
 
-	switchTab(idx) {
+	switchTab(idx: number) {
 		this.handleActive(idx, 'tab--active', this.tabs);
 		this.handleActive(idx, 'show', this.tabContent);
 	}
