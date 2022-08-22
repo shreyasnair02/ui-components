@@ -10,15 +10,16 @@ $colors: (
 			200: hsl(var(--h) var(--s) var(--l)),
 			300: hsl(var(--h) var(--s) 90%),
 			400: hsl(var(--h) var(--s) 80%),
+			500: hsl(var(--h) var(--s) 40%),
 		),
-		"purple": (
+		'purple': (
 			100: hsl(250 55% 55%),
 		),
-		"blue": (
+		'blue': (
 			100: hsl(218 67% 57%),
 			200: hsl(218 67% 53%),
 		),
-		"red": (
+		'red': (
 			100: hsl(0, 72%, 85%),
 			200: hsl(0, 72%, 51%),
 		),
@@ -41,15 +42,16 @@ $colors: (
 			200: hsl(var(--h) var(--s) 10%),
 			300: hsl(var(--h) var(--s) 16%),
 			400: hsl(var(--h) var(--s) 20%),
+			500: hsl(var(--h) var(--s) 60%),
 		),
-		"purple": (
+		'purple': (
 			100: hsl(250 55% 55%),
 		),
-		"blue": (
+		'blue': (
 			100: hsl(218 67% 57%),
 			200: hsl(218 67% 53%),
 		),
-		"red": (
+		'red': (
 			100: hsl(0, 52%, 85%),
 			200: hsl(0, 52%, 51%),
 		),
@@ -76,11 +78,11 @@ $colors: (
 	@include color-scheme(light);
 }
 
-[color-scheme="dark"] {
+[color-scheme='dark'] {
 	@include color-scheme(dark);
 }
 
-[color-scheme="light"] {
+[color-scheme='light'] {
 	@include color-scheme(light);
 }
 

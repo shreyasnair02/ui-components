@@ -6,6 +6,7 @@ let projectArr = [
 	'Button',
 	'Context Menu',
 	'Dropdown',
+	'Tabs',
 	'Tag Input',
 	'Input Autocomplete'
 ];
