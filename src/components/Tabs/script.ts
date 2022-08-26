@@ -43,8 +43,8 @@ class Tabs {
 	mouseover(e) {
 		if (!e.target.classList.contains('tab')) return;
 		this.highlighter.classList.add('transition');
-		const { target } = e;
-		const { width, left } = target.getBoundingClientRect();
+		const { target } : { target: HTMLDivElement} = e;
+		const { width, left } : { width: number, left: number} = target.getBoundingClientRect();
 		const updatedBounds = {
 			deltaX: left - this.left,
 			deltaW: width,
@@ -54,7 +54,7 @@ class Tabs {
 	}
 
 	setInitialBounds() {
-		this.firstBounds = this.tabs[0]?.getBoundingClientRect();
+		this.firstBounds = this.tabs[0].getBoundingClientRect();
 		this.highlighter.setAttribute(
 			'style',
 			`top: ${this.firstBounds.top}px; left: ${this.firstBounds.left}px; height: ${this.firstBounds.height}px;`
