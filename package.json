@@ -23,7 +23,7 @@
 	"homepage": "https://github.com/Vikram-Hegde/ui-components#readme",
 	"browserlist": "last 2 versions",
 	"devDependencies": {
-		"@parcel/transformer-sass": "^2.7.0",
+		"@parcel/transformer-sass": "latest",
 		"parcel": "latest"
 	}
 }
