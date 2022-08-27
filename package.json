@@ -21,8 +21,9 @@
 		"url": "https://github.com/Vikram-Hegde/ui-components/issues"
 	},
 	"homepage": "https://github.com/Vikram-Hegde/ui-components#readme",
+	"browserlist": "last 2 versions",
 	"devDependencies": {
-		"@parcel/transformer-sass": "^2.5.0",
+		"@parcel/transformer-sass": "^2.7.0",
 		"parcel": "latest"
 	}
 }
