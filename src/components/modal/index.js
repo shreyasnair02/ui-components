@@ -30,7 +30,7 @@ function takeInput(e) {
     }
 
     else if (e.target.closest('.signin')) {
-        if ((form.checkValidity())) {
+        if (form.checkValidity()) {
             console.log('true')
             change();
         }
