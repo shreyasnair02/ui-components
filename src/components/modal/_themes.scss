@@ -14,7 +14,6 @@ $colors: (
       //white button text
       700: hsl(250 55% 55%),
       //gallery
-      dark: hsla(0, 0%, 0%, 0.4),
     ),
     surface: (
       100: hsl(var(--h) var(--s) 80%),
@@ -31,6 +30,7 @@ $colors: (
       //second button
       700: hsl(228, 87%, 64%),
       //open modal btn
+      dark: hsla(0, 0%, 0%, 0.4),
     ),
   ),
   dark: (
