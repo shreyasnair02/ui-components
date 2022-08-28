@@ -30,7 +30,7 @@ function takeInput(e) {
     }
 
     else if (e.target.closest('.signin')) {
-        if ((form.checkValidity()) && (!pass.input.trim().length == 0) && (!idname.input.trim().length == 0) && (!email.input.trim().length == 0)) {
+        if ((form.checkValidity()) && (!pass.value.trim().length == 0) && (!idname.value.trim().length == 0) && (!email.value.trim().length == 0)) {
             console.log('true')
             change();
         }
