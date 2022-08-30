@@ -19,18 +19,21 @@
 }
 
 @keyframes shake1 {
-  25% {
-    transform: translateX(-4px);
+  8%,
+  41% {
+    transform: translateX(-10px);
   }
-
-  50% {
-    transform: translateX(0px);
+  25%,
+  58% {
+    transform: translateX(10px);
   }
-
   75% {
-    transform: translateX(4px);
+    transform: translateX(-5px);
   }
-
+  92% {
+    transform: translateX(5px);
+  }
+  0%,
   100% {
     transform: translateX(0);
   }
