@@ -165,7 +165,7 @@ body {
 
 input:not(:focus, :placeholder-shown):is(:invalid) {
   // input:is(:user-invalid) {
-  animation: shake1 0.2s forwards;
+  animation: shake1 0.4s linear;
   outline-style: solid;
   outline-width: 1px;
   outline-color: red;
