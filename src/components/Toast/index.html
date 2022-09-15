@@ -5,10 +5,25 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Toast</title>
-		<link rel="stylesheet" href="./styles.scss" />
-		<script src="./script.js" defer></script>
+		<link rel="stylesheet" href="./style.scss" />
+		<script src="./script.js" type="module"></script>
 	</head>
 	<body>
-		<h1 class="heading">Toast coming up soon!</h1>
+		<button class="add-toast">add toast</button>
+
+		<div class="toast-container"></div>
+
+		<template id="toast-template">
+			<style>
+				output {
+					display: flex;
+					color: purple;
+				}
+			</style>
+			<output class="toast-content">
+				<slot name="toast-content">Add some content here...</slot>
+				<button class="close-toast">close</button>
+			</output>
+		</template>
 	</body>
 </html>
