@@ -16,13 +16,31 @@
 		<template id="toast-template">
 			<style>
 				output {
-					display: flex;
-					color: purple;
+					--travel-distance: 35px;
+					display: block;
+					padding: 0.5rem 1rem;
+					background-color: hsla(0 0% 5% / 0.5);
+					animation: slideUp 5s ease-in-out forwards;
+				}
+
+				@keyframes slideUp {
+					0% {
+						opacity: 1;
+						transform: translateY(var(--travel-distance));
+					}
+					5%,
+					95% {
+						opacity: 1;
+						transform: translateY(0);
+					}
+					100% {
+						opacity: 0;
+						transform: translateY(calc(var(--travel-distance) * -1));
+					}
 				}
 			</style>
 			<output class="toast-content">
 				<slot name="toast-content">Add some content here...</slot>
-				<button class="close-toast">close</button>
 			</output>
 		</template>
 	</body>
