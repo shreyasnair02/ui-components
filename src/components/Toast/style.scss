@@ -25,3 +25,11 @@ html {
 		pointer-events: auto;
 	}
 }
+
+.add-toast {
+	padding: 0.15em 1em;
+	font-size: 1.2rem;
+	position: absolute;
+	inset: 50% auto auto 50%;
+	translate: -50% -50%;
+}
