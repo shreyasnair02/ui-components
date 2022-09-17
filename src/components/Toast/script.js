@@ -9,9 +9,12 @@ const positiveMessages = [
 	'You are awesome!',
 	'You are the best!',
 	'You are the greatest!',
+	'some long text to test the efficiency of the thing to work regardless of how long the text is, because it is important',
 ]
 
 class UIToast extends HTMLElement {
+	static height
+
 	constructor() {
 		super()
 		/** @type {HTMLTemplateElement} */
@@ -24,13 +27,23 @@ class UIToast extends HTMLElement {
 	connectedCallback() {
 		this.attachShadow({ mode: 'open' })
 		this.shadowRoot.append(this.template.content.cloneNode(true))
-
+		/** @type {HTMLSpanElement} */
 		let content = this.shadowRoot.querySelector('span')
 		content.textContent = this.dataset.content
 
-		this.shadowRoot.querySelector('output').addEventListener('animationend', () => {
-			this.remove();
-		})
+		this.height = this.shadowRoot
+			.querySelector('output')
+			.getBoundingClientRect().height
+		this.toastContainer.style.setProperty(
+			'--travel-distance',
+			`-${this.height}px`
+		)
+
+		this.shadowRoot
+			.querySelector('output')
+			.addEventListener('animationend', () => {
+				this.remove()
+			})
 	}
 }
 
@@ -45,13 +58,19 @@ button.addEventListener('click', () => {
 		'data-content',
 		positiveMessages[Math.floor(Math.random() * positiveMessages.length)]
 	)
-
-	toastContainer.childElementCount
-		? toastContainer
-				.animate([{ transform: 'translateY(-35px)' }], {
-					duration: 150,
-					easing: 'ease-in-out',
-				})
-				.finished.then(() => toastContainer.append(toast))
-		: toastContainer.append(toast)
+	const firstState = toastContainer.offsetHeight
+	toastContainer.append(toast)
+	const finalState = toastContainer.offsetHeight
+	const invert = finalState - firstState
+	toastContainer.childElementCount &&
+		toastContainer.animate(
+			[
+				{ transform: `translateY(${invert}px)` },
+				{ transform: 'translateY(0px)' },
+			],
+			{
+				duration: 150,
+				easing: 'ease-in-out',
+			}
+		)
 })
