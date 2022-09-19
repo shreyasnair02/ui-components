@@ -13,8 +13,6 @@ const positiveMessages = [
 ]
 
 class UIToast extends HTMLElement {
-	static height
-
 	constructor() {
 		super()
 		/** @type {HTMLTemplateElement} */
@@ -30,14 +28,6 @@ class UIToast extends HTMLElement {
 		/** @type {HTMLSpanElement} */
 		let content = this.shadowRoot.querySelector('span')
 		content.textContent = this.dataset.content
-
-		this.height = this.shadowRoot
-			.querySelector('output')
-			.getBoundingClientRect().height
-		this.toastContainer.style.setProperty(
-			'--travel-distance',
-			`-${this.height}px`
-		)
 
 		this.shadowRoot
 			.querySelector('output')
