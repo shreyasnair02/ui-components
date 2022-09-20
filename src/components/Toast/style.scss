@@ -4,10 +4,40 @@
 	box-sizing: border-box;
 }
 
+:root {
+	// light theme
+	--background-gradient: linear-gradient(
+		90deg,
+		rgba(0, 0, 0, 0.12) 1.22%,
+		rgba(0, 0, 0, 0.08) 83.24%
+	);
+	--border-gradient: rgba(0, 0, 0, 0.08);
+	--toast-background: hsla(0 0% 95% / 0.05);
+
+	--btn-background: hsl(0 0 80%);
+	--btn-color: hsl(0 0 10%)
+}
+
 html {
 	color-scheme: dark light;
 }
 
+@media (prefers-color-scheme: dark) {
+	:root {
+		// light theme
+		--background-gradient: linear-gradient(
+			90deg,
+			rgba(255, 255, 255, 0.06) 1.22%,
+			rgba(255, 255, 255, 0.03) 83.24%
+		);
+		--border-gradient: rgba(255, 255, 255, 0.06);
+		--toast-background: hsla(0 0% 95% / 0.05);
+
+
+	--btn-background: hsl(0 0 10%);
+	--btn-color: hsl(0 0 90%)
+	}
+}
 body {
 	isolation: isolate;
 	min-height: 100vh;
@@ -34,9 +64,14 @@ body {
 }
 
 .add-toast {
-	padding: 0.15em 1em;
+	padding: 0.4em 1em;
 	font-size: 1.2rem;
 	position: absolute;
 	inset: 50% auto auto 50%;
 	translate: -50% -50%;
+	text-transform: capitalize;
+	background-color: var(--btn-background);
+	color: var(--btn-color);
+	border: 1px solid hsl(0 0% 50% / 0.4);
+	border-radius: 6px;
 }

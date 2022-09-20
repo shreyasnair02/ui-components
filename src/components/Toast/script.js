@@ -32,7 +32,7 @@ class UIToast extends HTMLElement {
 		this.shadowRoot
 			.querySelector('output')
 			.addEventListener('animationend', () => {
-				this.remove()
+				// this.remove()
 			})
 	}
 }

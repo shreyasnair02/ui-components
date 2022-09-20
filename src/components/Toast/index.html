@@ -9,7 +9,7 @@
 		<script src="./script.js" type="module"></script>
 	</head>
 	<body>
-		<button class="add-toast">add toast</button>
+		<button class="add-toast">+ add toast</button>
 
 		<template id="toast-template">
 			<style>
@@ -17,10 +17,14 @@
 					--travel-distance: 35px;
 					display: block;
 					padding: 0.5rem 1rem;
-					background-color: hsla(0 0% 5% / 0.5);
+					background-color: var(--toast-background);
 					animation: slideUp 5s ease-in-out forwards;
 					width: fit-content;
 					max-width: 80ch;
+					background: var(--background-gradient);
+					border: 1px solid var(--border-gradient);
+					backdrop-filter: blur(4px);
+					border-radius: 6px;
 				}
 
 				output:hover {
