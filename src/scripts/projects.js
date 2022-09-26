@@ -8,6 +8,7 @@ let projectArr = [
 	'Dropdown',
 	'Tabs',
 	'Tag Input',
+	'Toast',
 	'Input Autocomplete'
 ];
 
