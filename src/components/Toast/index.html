@@ -15,16 +15,23 @@
 			<style>
 				output {
 					--travel-distance: 35px;
-					display: block;
 					padding: 0.5rem 1rem;
 					background-color: var(--toast-background);
 					animation: slideUp 5s ease-in-out forwards;
 					width: fit-content;
+					display: flex;
+					align-items: center;
+					gap: 0.4rem;
 					max-width: 80ch;
 					background: var(--background-gradient);
 					border: 1px solid var(--border-gradient);
-					backdrop-filter: blur(4px);
+					backdrop-filter: blur(8px);
 					border-radius: 6px;
+				}
+
+				svg {
+					flex-shrink: 0;
+					opacity: 0.6;
 				}
 
 				output:hover {
@@ -48,6 +55,23 @@
 				}
 			</style>
 			<output class="toast-content">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="icon icon-tabler icon-tabler-info-square"
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					stroke-width="2"
+					stroke="currentColor"
+					fill="none"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				>
+					<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+					<line x1="12" y1="8" x2="12.01" y2="8"></line>
+					<rect x="4" y="4" width="16" height="16" rx="2"></rect>
+					<polyline points="11 12 12 12 12 16 13 16"></polyline>
+				</svg>
 				<span></span>
 			</output>
 		</template>
